@@ -5,27 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="شركة Message Express للشحن الدولي - شحن سريع وآمن جوي وبحري وبري لجميع دول العالم مع تخليص جمركي. رخصة بريد رقم 64"
+      data-i18n-content="meta.description"
+      content="Message Express للشحن الدولي. شحن صادر جوي وبحري وبري من مصر إلى العالم، واستيراد وارد من الصين والإمارات وأمريكا وأوروبا مع تخليص جمركي وتوصيل حتى الباب. رخصة بريد رقم 64."
     />
     <meta
       name="keywords"
-      content="شحن, توصيل, DHL, UPS, FedEx, Aramex, SkyNet, شحن دولي, تخليص جمركي, شحن جوي, شحن بحري, شحن بري, رخصة بريد 64"
+      content="شحن, شحن دولي, استيراد, وارد, صادر, استيراد من الصين, استيراد من الإمارات, شحن أمازون أمريكا, تخليص جمركي, شحن جوي, شحن بحري, شحن بري, DHL, UPS, FedEx, Aramex, SkyNet, رخصة بريد 64"
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Message Express" />
     <link rel="canonical" href="https://www.messageexpress.com" />
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Message Express - شحن دولي سريع وآمن" />
+    <meta
+      property="og:title"
+      data-i18n-content="meta.ogTitle"
+      content="Message Express — شحن دولي صادر ووارد"
+    />
     <meta
       property="og:description"
-      content="شركة Message Express للشحن الدولي - شحن سريع وآمن لجميع دول العالم"
+      data-i18n-content="meta.ogDescription"
+      content="شحن من مصر إلى العالم، واستيراد من الصين والإمارات وأمريكا وأوروبا مع تخليص جمركي وتوصيل حتى الباب."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.messageexpress.com" />
     <meta property="og:image" content="images/logo.png" />
 
-    <title>Message Express - شحن دولي سريع وآمن | رخصة بريد 64</title>
+    <title>Message Express — شحن دولي صادر ووارد | رخصة بريد 64</title>
 
     <!-- Preload Critical Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,21 +51,25 @@
   </head>
   <body>
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">الانتقال إلى المحتوى الرئيسي</a>
+    <a href="#main-content" class="skip-link" data-i18n="a11y.skipLink"
+      >الانتقال إلى المحتوى الرئيسي</a
+    >
 
     <!-- Header -->
     <header role="banner" class="header">
       <div class="logo">
         <img
           src="images/logo.png"
+          data-i18n-alt="a11y.logoAlt"
           alt="شعار Message Express للشحن الدولي"
           width="200"
           height="60"
         />
       </div>
-      <nav role="navigation" aria-label="القائمة الرئيسية">
+      <nav role="navigation" data-i18n-aria-label="a11y.mainNav" aria-label="القائمة الرئيسية">
         <button
           class="mobile-menu-toggle"
+          data-i18n-aria-label="a11y.openMenu"
           aria-label="فتح القائمة"
           aria-expanded="false"
         >
@@ -68,140 +78,323 @@
           <span></span>
         </button>
         <ul class="nav-menu">
-          <li><a href="#home">الرئيسية</a></li>
-          <li><a href="#services">خدماتنا</a></li>
-          <li><a href="#why-us">لماذا نحن</a></li>
-          <li><a href="#clients">شركاؤنا</a></li>
-          <li><a href="#tracking">تتبع الشحنة</a></li>
-          <li><a href="#quote">عرض سعر</a></li>
-          <li><a href="#contact">تواصل معنا</a></li>
+          <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="#services" data-i18n="nav.services">خدماتنا</a></li>
+          <li>
+            <a href="#import" class="nav-highlight" data-i18n="nav.import"
+              >الوارد</a
+            >
+          </li>
+          <li><a href="#why-us" data-i18n="nav.whyUs">لماذا نحن</a></li>
+          <li><a href="#clients" data-i18n="nav.clients">شركاؤنا</a></li>
+          <li><a href="#tracking" data-i18n="nav.tracking">تتبع الشحنة</a></li>
+          <li><a href="#quote" data-i18n="nav.quote">عرض سعر</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">تواصل معنا</a></li>
+          <li class="nav-lang">
+            <button
+              id="langToggle"
+              class="lang-toggle"
+              type="button"
+              data-i18n-aria-label="lang.toggleAria"
+              aria-label="Switch to English"
+            >
+              English
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
 
     <!-- Hero Slider -->
-    <section id="home" class="hero-slider" aria-label="عرض الصور الترويجية">
+    <section
+      id="home"
+      class="hero-slider"
+      data-i18n-aria-label="a11y.heroSlider"
+      aria-label="عرض الصور الترويجية"
+    >
       <div class="slides">
         <img
           class="slide active"
           src="./images/slide1.jpg"
-          aria-label="صورة الشحن الجوي"
-          alt="test"
+          data-i18n-alt="hero.slide1Alt"
+          alt="شحنة جوية جاهزة للإقلاع"
         />
         <img
           class="slide"
           src="./images/slide2.jpg"
-          aria-label="صورة الشحن البحري"
-          alt="صورة الشحن البحري"
+          data-i18n-alt="hero.slide2Alt"
+          alt="حاويات شحن بحري في الميناء"
         />
         <img
           class="slide"
           src="./images/slide3.jpg"
-          aria-label="صورة الشحن البري"
-          alt="صورة الشحن البري"
+          data-i18n-alt="hero.slide3Alt"
+          alt="أسطول الشحن البري"
         />
         <img
           class="slide"
           src="./images/slide4.jpg"
-          aria-label="خدمات الشحن"
-          alt="خدمات الشحن"
+          data-i18n-alt="hero.slide4Alt"
+          alt="خدمات الشحن الدولي"
         />
         <img
           class="slide"
           src="./images/slide5.jpg"
-          aria-label="التوصيل السريع"
-          alt="التوصيل السريع"
+          data-i18n-alt="hero.slide5Alt"
+          alt="توصيل سريع حتى الباب"
         />
       </div>
       <div class="hero-content">
-        <h1 class="hero-title">Message Express للشحن الدولي</h1>
-        <p class="hero-subtitle">شحن سريع وآمن لجميع دول العالم</p>
-        <a href="#quote" class="hero-cta">احصل على عرض سعر الآن</a>
+        <h1 class="hero-title" data-i18n="hero.title">
+          Message Express للشحن الدولي
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+          نشحن لك من مصر إلى العالم، ونستورد لك من العالم إلى مصر
+        </p>
+        <a href="#quote" class="hero-cta" data-i18n="hero.cta"
+          >احصل على عرض سعر الآن</a
+        >
       </div>
     </section>
 
     <main id="main-content">
       <div class="section-divider" aria-hidden="true"></div>
 
-      <!-- Services Section -->
+      <!-- ============ Services: EXPORT ============ -->
       <section
         id="services"
         class="services-section"
         aria-labelledby="services-title"
       >
         <div class="container">
-          <h2 id="services-title" class="services-title">خدماتنا</h2>
-          <div class="services-highlights">
-            <p class="services-subtitle">✓ شحن أمازون أمريكا</p>
-            <p class="services-subtitle">✓ شحن لجميع دول العالم</p>
-            <p class="services-subtitle">
-              ✓ شحن على وكالتنا Sky Net في أوروبا بدون مصاريف جمركية
+          <h2 id="services-title" class="services-title" data-i18n="services.title">
+            خدماتنا
+          </h2>
+          <p class="section-intro" data-i18n="services.intro">
+            نغطي اتجاهي الشحن: الصادر من مصر إلى أي وجهة، والوارد من أهم أسواق
+            العالم إلى باب منزلك أو مقر شركتك.
+          </p>
+
+          <div class="direction-block">
+            <div class="direction-header">
+              <span class="direction-pill" data-i18n="services.export.label"
+                >الصادر</span
+              >
+              <h3 class="direction-title" data-i18n="services.export.title">
+                الصادر — من مصر إلى العالم
+              </h3>
+              <p class="direction-subtitle" data-i18n="services.export.subtitle">
+                اختر وسيلة الشحن التي تناسب وزن بضاعتك وميزانيتك وموعد التسليم.
+              </p>
+            </div>
+
+            <div class="services-grid">
+              <article class="service-card">
+                <img
+                  src="images/plane.jpg"
+                  data-i18n-alt="services.air.imgAlt"
+                  alt="الشحن الجوي السريع"
+                  width="300"
+                  height="200"
+                  loading="lazy"
+                />
+                <h4 data-i18n="services.air.title">الشحن الجوي</h4>
+                <p data-i18n="services.air.desc">
+                  الخيار الأسرع، من 3 إلى 7 أيام حسب الوجهة، مع متابعة لحظية
+                  للشحنة حتى التسليم.
+                </p>
+                <a
+                  href="#quote"
+                  class="service-btn"
+                  data-i18n="services.quoteBtn"
+                  data-i18n-aria-label="services.air.btnAria"
+                  aria-label="اطلب عرض سعر للشحن الجوي"
+                  >اطلب عرض سعر</a
+                >
+              </article>
+
+              <article class="service-card">
+                <img
+                  src="images/ship.jpg"
+                  data-i18n-alt="services.sea.imgAlt"
+                  alt="الشحن البحري الموثوق"
+                  width="300"
+                  height="200"
+                  loading="lazy"
+                />
+                <h4 data-i18n="services.sea.title">الشحن البحري</h4>
+                <p data-i18n="services.sea.desc">
+                  الأوفر للشحنات الكبيرة والثقيلة. حاويات كاملة (FCL) أو مجمّعة
+                  (LCL).
+                </p>
+                <a
+                  href="#quote"
+                  class="service-btn"
+                  data-i18n="services.quoteBtn"
+                  data-i18n-aria-label="services.sea.btnAria"
+                  aria-label="اطلب عرض سعر للشحن البحري"
+                  >اطلب عرض سعر</a
+                >
+              </article>
+
+              <article class="service-card">
+                <img
+                  src="images/truck.jpg"
+                  data-i18n-alt="services.land.imgAlt"
+                  alt="الشحن البري السريع"
+                  width="300"
+                  height="200"
+                  loading="lazy"
+                />
+                <h4 data-i18n="services.land.title">الشحن البري</h4>
+                <p data-i18n="services.land.desc">
+                  تغطية للدول العربية ودول الجوار بمرونة في المواعيد وتكلفة أقل
+                  من الجوي.
+                </p>
+                <a
+                  href="#quote"
+                  class="service-btn"
+                  data-i18n="services.quoteBtn"
+                  data-i18n-aria-label="services.land.btnAria"
+                  aria-label="اطلب عرض سعر للشحن البري"
+                  >اطلب عرض سعر</a
+                >
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ============ Services: IMPORT (الوارد) ============ -->
+      <section id="import" class="import-section" aria-labelledby="import-title">
+        <div class="container">
+          <div class="direction-header">
+            <span class="direction-pill import-pill" data-i18n="import.label"
+              >الوارد</span
+            >
+            <span class="new-badge" data-i18n="import.badge">خدمة جديدة</span>
+            <h2 id="import-title" class="direction-title" data-i18n="import.title">
+              الوارد — من العالم إلى مصر
+            </h2>
+            <p class="direction-subtitle" data-i18n="import.subtitle">
+              نمنحك عنوان استلام في الخارج. اشترِ من أي متجر أو مورد، اشحن على
+              عنواننا، ونتولى نحن الباقي.
             </p>
           </div>
 
-          <div class="services-grid">
-            <article class="service-card">
-              <img
-                src="images/plane.jpg"
-                alt="الشحن الجوي السريع"
-                width="300"
-                height="200"
-                loading="lazy"
-              />
-              <h3>الشحن الجوي</h3>
-              <p>
-                شحن جوي في أسرع وقت من 3 إلى 7 أيام مع متابعة لحظية للشحنة ووصول
-                آمن ومضمون
+          <!-- Lanes -->
+          <div class="import-grid">
+            <article class="import-card">
+              <div class="import-flag" aria-hidden="true">🇨🇳</div>
+              <h3 data-i18n="import.china.title">الصين</h3>
+              <p data-i18n="import.china.desc">
+                عنوان استلام في الصين يستقبل مشترياتك من 1688 و Taobao و Alibaba
+                ومن الموردين مباشرة.
               </p>
-              <a
-                href="#quote"
-                class="service-btn"
-                aria-label="اطلب عرض سعر للشحن الجوي"
-                >اطلب عرض سعر</a
+              <span class="import-tag" data-i18n="import.china.tag"
+                >مثالي للتجار والموردين</span
               >
             </article>
 
-            <article class="service-card">
-              <img
-                src="images/ship.jpg"
-                alt="الشحن البحري الموثوق"
-                width="300"
-                height="200"
-                loading="lazy"
-              />
-              <h3>الشحن البحري</h3>
-              <p>
-                شحن بحري آمن وموثوق بأفضل الأسعار وبتغليف ممتاز - حاويات كاملة
-                (FCL) أو مجمعة (LCL)
+            <article class="import-card">
+              <div class="import-flag" aria-hidden="true">🇦🇪</div>
+              <h3 data-i18n="import.uae.title">الإمارات</h3>
+              <p data-i18n="import.uae.desc">
+                عنوان استلام في دبي لمشتريات نون وأمازون الإمارات والموردين
+                المحليين.
               </p>
-              <a
-                href="#quote"
-                class="service-btn"
-                aria-label="اطلب عرض سعر للشحن البحري"
-                >اطلب عرض سعر</a
+              <span class="import-tag" data-i18n="import.uae.tag"
+                >الأسرع وصولاً</span
               >
             </article>
 
-            <article class="service-card">
-              <img
-                src="images/truck.jpg"
-                alt="الشحن البري السريع"
-                width="300"
-                height="200"
-                loading="lazy"
-              />
-              <h3>الشحن البري</h3>
-              <p>
-                شحن بري سريع وآمن لجميع الدول العربية والإقليمية بمرونة عالية
-                وأسعار تنافسية
+            <article class="import-card">
+              <div class="import-flag" aria-hidden="true">🌍</div>
+              <h3 data-i18n="import.west.title">أمريكا وأوروبا</h3>
+              <p data-i18n="import.west.desc">
+                شحن مشتريات أمازون أمريكا إلى مصر، وشحن من أوروبا عبر وكيلنا Sky
+                Net دون تحميلك مصاريف التخليص.
               </p>
-              <a
-                href="#quote"
-                class="service-btn"
-                aria-label="اطلب عرض سعر للشحن البري"
-                >اطلب عرض سعر</a
+              <span class="import-tag" data-i18n="import.west.tag"
+                >عبر وكيلنا Sky Net</span
               >
             </article>
+          </div>
+
+          <!-- How it works -->
+          <h3 class="import-how-title" data-i18n="import.how.title">
+            كيف تستورد معنا؟
+          </h3>
+          <ol class="import-steps">
+            <li class="import-step">
+              <span class="step-num" aria-hidden="true">1</span>
+              <h4 data-i18n="import.how.step1.title">اطلب عنوان الاستلام</h4>
+              <p data-i18n="import.how.step1.desc">
+                راسلنا على واتساب وحدد الدولة التي ستشتري منها، فنرسل لك عنوان
+                المستودع.
+              </p>
+            </li>
+            <li class="import-step">
+              <span class="step-num" aria-hidden="true">2</span>
+              <h4 data-i18n="import.how.step2.title">اشترِ واشحن إلى عنواننا</h4>
+              <p data-i18n="import.how.step2.desc">
+                اشترِ من أي متجر أو مورد، واجعل عنوان التسليم هو عنوان مستودعنا.
+              </p>
+            </li>
+            <li class="import-step">
+              <span class="step-num" aria-hidden="true">3</span>
+              <h4 data-i18n="import.how.step3.title">نجمّع ونشحن</h4>
+              <p data-i18n="import.how.step3.desc">
+                نجمّع طرودك في شحنة واحدة لتقليل التكلفة، ونشحنها إلى مصر.
+              </p>
+            </li>
+            <li class="import-step">
+              <span class="step-num" aria-hidden="true">4</span>
+              <h4 data-i18n="import.how.step4.title">نخلّص ونسلّم</h4>
+              <p data-i18n="import.how.step4.desc">
+                نتولى التخليص الجمركي، ثم نسلّم الشحنة حتى بابك داخل مصر.
+              </p>
+            </li>
+          </ol>
+
+          <!-- What's included -->
+          <div class="import-included">
+            <h3 data-i18n="import.included.title">ما الذي يشمله الوارد؟</h3>
+            <ul class="included-list">
+              <li data-i18n="import.included.1">تخليص جمركي كامل بمعرفتنا</li>
+              <li data-i18n="import.included.2">
+                تجميع الطرود في شحنة واحدة (Consolidation)
+              </li>
+              <li data-i18n="import.included.3">تخزين مؤقت لحين اكتمال شحنتك</li>
+              <li data-i18n="import.included.4">تقدير الرسوم الجمركية قبل الشحن</li>
+              <li data-i18n="import.included.5">
+                إرشادك للأصناف الممنوعة والمقيّدة قبل الشراء
+              </li>
+              <li data-i18n="import.included.6">
+                توصيل حتى الباب في جميع محافظات مصر
+              </li>
+            </ul>
+          </div>
+
+          <!-- Import CTA -->
+          <div class="import-cta">
+            <h3 data-i18n="import.cta.title">جاهز تبدأ أول شحنة وارد؟</h3>
+            <p data-i18n="import.cta.desc">
+              أرسل لنا تفاصيل مشترياتك على واتساب ونرد عليك بعنوان الاستلام
+              والتكلفة التقديرية.
+            </p>
+            <a
+              href="https://wa.me/201550564589"
+              data-wa-base="https://wa.me/201550564589"
+              data-wa-message="msg.waImport"
+              target="_blank"
+              rel="noopener"
+              class="import-cta-btn"
+              data-i18n="import.cta.btn"
+              >اطلب عنوان الاستلام</a
+            >
           </div>
         </div>
       </section>
@@ -209,66 +402,74 @@
       <div class="section-divider" aria-hidden="true"></div>
 
       <!-- Why Choose Us Section -->
-      <section
-        id="why-us"
-        class="why-us-section"
-        aria-labelledby="why-us-title"
-      >
+      <section id="why-us" class="why-us-section" aria-labelledby="why-us-title">
         <div class="container">
-          <h2 id="why-us-title" class="section-title">
+          <h2 id="why-us-title" class="section-title" data-i18n="why.title">
             لماذا تختار Message Express؟
           </h2>
           <div class="features-grid">
             <article class="feature-item license-feature">
               <img
                 src="images/64.png"
+                data-i18n-alt="why.license.imgAlt"
                 alt="رخصة بريد رقم 64"
                 class="license-icon"
                 width="100"
                 height="100"
                 loading="lazy"
               />
-              <h3>رخصة بريد رقم 64</h3>
-              <p>
-                مرخصون رسمياً من البريد المصري - اشحن وأنت مطمئن على بضاعتك
-                وأموالك
+              <h3 data-i18n="why.license.title">رخصة بريد رقم 64</h3>
+              <p data-i18n="why.license.desc">
+                مرخصون رسمياً من البريد المصري — تتعامل مع جهة معتمدة، لا وسيط.
               </p>
             </article>
 
             <article class="feature-item">
               <div class="feature-icon" aria-hidden="true">✈️</div>
-              <h3>تغطية عالمية</h3>
-              <p>نغطي جميع دول العالم مع شبكة واسعة من الشركاء الموثوقين</p>
+              <h3 data-i18n="why.global.title">تغطية عالمية</h3>
+              <p data-i18n="why.global.desc">
+                شبكة شركاء في كل القارات تغطي الصادر والوارد على حد سواء.
+              </p>
             </article>
 
             <article class="feature-item">
               <div class="feature-icon" aria-hidden="true">💰</div>
-              <h3>أسعار تنافسية</h3>
-              <p>أفضل الأسعار في السوق بدون مصاريف مخفية أو رسوم إضافية</p>
+              <h3 data-i18n="why.price.title">أسعار تنافسية</h3>
+              <p data-i18n="why.price.desc">
+                سعر واضح من البداية، بدون رسوم مفاجئة عند التسليم.
+              </p>
             </article>
 
             <article class="feature-item">
               <div class="feature-icon" aria-hidden="true">🛃</div>
-              <h3>تخليص جمركي</h3>
-              <p>تخليص جمركي كامل وسريع لجميع الشحنات مع متابعة دقيقة</p>
+              <h3 data-i18n="why.customs.title">تخليص جمركي</h3>
+              <p data-i18n="why.customs.desc">
+                نتولى التخليص بمعرفتنا في الصادر والوارد، ونخبرك بالرسوم مقدماً.
+              </p>
             </article>
 
             <article class="feature-item">
               <div class="feature-icon" aria-hidden="true">📦</div>
-              <h3>تتبع مباشر</h3>
-              <p>تتبع شحنتك لحظة بلحظة حتى الوصول عبر أنظمة حديثة</p>
+              <h3 data-i18n="why.tracking.title">تتبع مباشر</h3>
+              <p data-i18n="why.tracking.desc">
+                تعرف مكان شحنتك في كل مرحلة حتى لحظة التسليم.
+              </p>
             </article>
 
             <article class="feature-item">
               <div class="feature-icon" aria-hidden="true">🚚</div>
-              <h3>توصيل سريع</h3>
-              <p>التزام صارم بمواعيد التسليم مع ضمان السرعة والدقة</p>
+              <h3 data-i18n="why.delivery.title">توصيل حتى الباب</h3>
+              <p data-i18n="why.delivery.desc">
+                لا تنتهي مهمتنا في الميناء — نوصل الشحنة إلى عنوانك مباشرة.
+              </p>
             </article>
 
             <article class="feature-item">
               <div class="feature-icon" aria-hidden="true">💬</div>
-              <h3>دعم 24/7</h3>
-              <p>فريق دعم فني متخصص متاح على مدار الساعة طوال أيام الأسبوع</p>
+              <h3 data-i18n="why.support.title">دعم 24/7</h3>
+              <p data-i18n="why.support.desc">
+                فريق يرد عليك في أي وقت، وليس في ساعات العمل فقط.
+              </p>
             </article>
           </div>
         </div>
@@ -277,20 +478,19 @@
       <div class="section-divider" aria-hidden="true"></div>
 
       <!-- Clients Section -->
-      <section
-        id="clients"
-        class="clients-section"
-        aria-labelledby="clients-title"
-      >
+      <section id="clients" class="clients-section" aria-labelledby="clients-title">
         <div class="container">
-          <h2 id="clients-title" class="clients-title">شركاؤنا في النجاح</h2>
-          <p class="clients-subtitle">
-            نعمل مع أفضل وأكبر شركات الشحن العالمية
+          <h2 id="clients-title" class="clients-title" data-i18n="clients.title">
+            شركاؤنا في النجاح
+          </h2>
+          <p class="clients-subtitle" data-i18n="clients.subtitle">
+            نعمل مع أكبر شركات الشحن العالمية
           </p>
           <div class="clients-grid">
             <div class="client-item">
               <img
                 src="images/DHL.png"
+                data-i18n-alt="clients.dhlAlt"
                 alt="شعار DHL"
                 width="120"
                 height="70"
@@ -300,6 +500,7 @@
             <div class="client-item">
               <img
                 src="images/UPS.png"
+                data-i18n-alt="clients.upsAlt"
                 alt="شعار UPS"
                 width="120"
                 height="70"
@@ -309,6 +510,7 @@
             <div class="client-item">
               <img
                 src="images/FedEx.png"
+                data-i18n-alt="clients.fedexAlt"
                 alt="شعار FedEx"
                 width="120"
                 height="70"
@@ -318,6 +520,7 @@
             <div class="client-item">
               <img
                 src="images/aramex.png"
+                data-i18n-alt="clients.aramexAlt"
                 alt="شعار Aramex"
                 width="120"
                 height="70"
@@ -327,6 +530,7 @@
             <div class="client-item">
               <img
                 src="images/SkyNet.png"
+                data-i18n-alt="clients.skynetAlt"
                 alt="شعار SkyNet"
                 width="120"
                 height="70"
@@ -340,15 +544,13 @@
       <div class="section-divider" aria-hidden="true"></div>
 
       <!-- Tracking Section -->
-      <section
-        id="tracking"
-        class="tracking-section"
-        aria-labelledby="tracking-title"
-      >
+      <section id="tracking" class="tracking-section" aria-labelledby="tracking-title">
         <div class="container">
-          <h2 id="tracking-title" class="tracking-title">تتبع شحنتك</h2>
-          <p class="tracking-subtitle">
-            اختر شركة الشحن ثم أدخل رقم تتبع الشحنة
+          <h2 id="tracking-title" class="tracking-title" data-i18n="tracking.title">
+            تتبع شحنتك
+          </h2>
+          <p class="tracking-subtitle" data-i18n="tracking.subtitle">
+            اختر شركة الشحن ثم أدخل رقم التتبع
           </p>
 
           <div class="custom-select-wrapper">
@@ -362,6 +564,7 @@
                 <img
                   id="selected-logo"
                   src="images/Thing.png"
+                  data-i18n-alt="tracking.selectAlt"
                   alt="اختر شركة الشحن"
                   width="150"
                   height="120"
@@ -370,74 +573,37 @@
             </button>
 
             <div class="options-list" id="options-list" role="listbox">
-              <div
-                class="option"
-                onclick="selectCompany('DHL', 'images/DHL.png')"
-                role="option"
-              >
-                <img src="images/DHL.png" alt="" width="120" height="90" /><span
-                  >DHL</span
-                >
+              <div class="option" onclick="selectCompany('DHL', 'images/DHL.png')" role="option">
+                <img src="images/DHL.png" alt="" width="120" height="90" /><span>DHL</span>
               </div>
-              <div
-                class="option"
-                onclick="selectCompany('UPS', 'images/UPS.png')"
-                role="option"
-              >
-                <img src="images/UPS.png" alt="" width="120" height="90" /><span
-                  >UPS</span
-                >
+              <div class="option" onclick="selectCompany('UPS', 'images/UPS.png')" role="option">
+                <img src="images/UPS.png" alt="" width="120" height="90" /><span>UPS</span>
               </div>
-              <div
-                class="option"
-                onclick="selectCompany('FedEx', 'images/FedEx.png')"
-                role="option"
-              >
-                <img
-                  src="images/FedEx.png"
-                  alt=""
-                  width="120"
-                  height="90"
-                /><span>FedEx</span>
+              <div class="option" onclick="selectCompany('FedEx', 'images/FedEx.png')" role="option">
+                <img src="images/FedEx.png" alt="" width="120" height="90" /><span>FedEx</span>
               </div>
-              <div
-                class="option"
-                onclick="selectCompany('Aramex', 'images/aramex.png')"
-                role="option"
-              >
-                <img
-                  src="images/aramex.png"
-                  alt=""
-                  width="120"
-                  height="90"
-                /><span>Aramex</span>
+              <div class="option" onclick="selectCompany('Aramex', 'images/aramex.png')" role="option">
+                <img src="images/aramex.png" alt="" width="120" height="90" /><span>Aramex</span>
               </div>
-              <div
-                class="option"
-                onclick="selectCompany('SkyNet', 'images/SkyNet.png')"
-                role="option"
-              >
-                <img
-                  src="images/SkyNet.png"
-                  alt=""
-                  width="120"
-                  height="90"
-                /><span>SkyNet</span>
+              <div class="option" onclick="selectCompany('SkyNet', 'images/SkyNet.png')" role="option">
+                <img src="images/SkyNet.png" alt="" width="120" height="90" /><span>SkyNet</span>
               </div>
             </div>
           </div>
 
           <div id="trackingInput" class="tracking-box" style="display: none">
-            <label for="trackingNumber" class="visually-hidden"
+            <label for="trackingNumber" class="visually-hidden" data-i18n="tracking.numberLabel"
               >رقم التتبع</label
             >
             <input
               type="text"
               id="trackingNumber"
+              data-i18n-placeholder="tracking.placeholder"
               placeholder="اكتب رقم التتبع هنا"
+              data-i18n-aria-label="tracking.numberLabel"
               aria-label="رقم التتبع"
             />
-            <button class="track-btn" onclick="trackShipment()">
+            <button class="track-btn" onclick="trackShipment()" data-i18n="tracking.btn">
               تتبع الشحنة
             </button>
           </div>
@@ -449,36 +615,40 @@
       <!-- Quote Form Section -->
       <section id="quote" class="quote-section" aria-labelledby="quote-title">
         <div class="container">
-          <h2 id="quote-title" class="section-title">
-            اطلب عرض سعر مجاني الآن
+          <h2 id="quote-title" class="section-title" data-i18n="quote.title">
+            اطلب عرض سعر مجاني
           </h2>
-          <p class="section-subtitle">
+          <p class="section-subtitle" data-i18n="quote.subtitle">
             املأ النموذج وسيتواصل معك فريقنا خلال 30 دقيقة
           </p>
 
           <form id="quoteForm" class="quote-form" novalidate>
             <div class="form-row">
               <div class="form-group">
-                <label for="quote-name"
-                  >الاسم الكامل <span class="required">*</span></label
-                >
+                <label for="quote-name">
+                  <span data-i18n="quote.name">الاسم الكامل</span>
+                  <span class="required">*</span>
+                </label>
                 <input
                   type="text"
                   id="quote-name"
                   name="name"
+                  data-i18n-placeholder="quote.namePlaceholder"
                   placeholder="اكتب اسمك"
                   required
                   aria-required="true"
                 />
               </div>
               <div class="form-group">
-                <label for="quote-phone"
-                  >رقم الهاتف <span class="required">*</span></label
-                >
+                <label for="quote-phone">
+                  <span data-i18n="quote.phone">رقم الهاتف</span>
+                  <span class="required">*</span>
+                </label>
                 <input
                   type="tel"
                   id="quote-phone"
                   name="phone"
+                  data-i18n-placeholder="quote.phonePlaceholder"
                   placeholder="01234567890"
                   required
                   aria-required="true"
@@ -488,54 +658,67 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="shipType"
-                  >نوع الشحن <span class="required">*</span></label
-                >
-                <select
-                  name="shipType"
-                  id="shipType"
-                  required
-                  aria-required="true"
-                >
-                  <option value="" disabled selected>اختر نوع الشحن</option>
-                  <option value="جوي">جوي</option>
-                  <option value="بحري">بحري</option>
-                  <option value="بري">بري</option>
+                <label for="shipDirection">
+                  <span data-i18n="quote.direction">اتجاه الشحن</span>
+                  <span class="required">*</span>
+                </label>
+                <select name="shipDirection" id="shipDirection" required aria-required="true">
+                  <option value="" disabled selected data-i18n="quote.directionSelect">
+                    اختر اتجاه الشحن
+                  </option>
+                  <option value="export" data-i18n="quote.directionExport">
+                    صادر — من مصر إلى الخارج
+                  </option>
+                  <option value="import" data-i18n="quote.directionImport">
+                    وارد — من الخارج إلى مصر
+                  </option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="quote-weight">الوزن التقريبي</label>
-                <input
-                  type="text"
-                  id="quote-weight"
-                  name="weight"
-                  placeholder="مثال: 25 كجم / 1 طن"
-                />
+                <label for="shipType">
+                  <span data-i18n="quote.shipType">وسيلة الشحن</span>
+                  <span class="required">*</span>
+                </label>
+                <select name="shipType" id="shipType" required aria-required="true">
+                  <option value="" disabled selected data-i18n="quote.shipTypeSelect">
+                    اختر وسيلة الشحن
+                  </option>
+                  <option value="air" data-i18n="quote.shipAir">جوي</option>
+                  <option value="sea" data-i18n="quote.shipSea">بحري</option>
+                  <option value="land" data-i18n="quote.shipLand">بري</option>
+                  <option value="advise" data-i18n="quote.shipAdvise">
+                    غير متأكد — انصحوني
+                  </option>
+                </select>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="quote-from"
-                  >من <span class="required">*</span></label
-                >
+                <label for="quote-from">
+                  <span data-i18n="quote.from">من</span>
+                  <span class="required">*</span>
+                </label>
                 <input
                   type="text"
                   id="quote-from"
                   name="from"
+                  data-i18n-placeholder="quote.cityCountry"
                   placeholder="مدينة / دولة"
                   required
                   aria-required="true"
                 />
               </div>
               <div class="form-group">
-                <label for="quote-to"
-                  >إلى <span class="required">*</span></label
-                >
+                <label for="quote-to">
+                  <span data-i18n="quote.to">إلى</span>
+                  <span class="required">*</span>
+                </label>
                 <input
                   type="text"
                   id="quote-to"
                   name="to"
+                  data-i18n-placeholder="quote.cityCountry"
                   placeholder="مدينة / دولة"
                   required
                   aria-required="true"
@@ -543,28 +726,32 @@
               </div>
             </div>
 
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="quote-weight" data-i18n="quote.weight">الوزن التقريبي</label>
+                <input
+                  type="text"
+                  id="quote-weight"
+                  name="weight"
+                  data-i18n-placeholder="quote.weightPlaceholder"
+                  placeholder="مثال: 25 كجم / 1 طن"
+                />
+              </div>
+            </div>
+
             <div class="form-group full-width">
-              <label for="quote-desc">وصف الشحنة</label>
+              <label for="quote-desc" data-i18n="quote.desc">وصف الشحنة</label>
               <textarea
                 id="quote-desc"
                 name="desc"
-                placeholder="نوع البضاعة، عدد الكراتين، أي ملاحظات..."
+                data-i18n-placeholder="quote.descPlaceholder"
+                placeholder="نوع البضاعة، عدد الطرود، أي ملاحظات..."
               ></textarea>
             </div>
 
-            <button
-              type="button"
-              class="submit-btn"
-              onclick="sendWhatsAppQuote()"
-            >
-              <span>إرسال عبر واتساب</span>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
+            <button type="button" class="submit-btn" onclick="sendWhatsAppQuote()">
+              <span data-i18n="quote.submit">إرسال عبر واتساب</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
                 />
@@ -579,54 +766,72 @@
       <!-- FAQ Section -->
       <section class="faq-section" aria-labelledby="faq-title">
         <div class="container">
-          <h2 id="faq-title" class="section-title">الأسئلة الشائعة</h2>
+          <h2 id="faq-title" class="section-title" data-i18n="faq.title">
+            الأسئلة الشائعة
+          </h2>
           <div class="faq-container">
             <details class="faq-item">
-              <summary>كم مدة الشحن؟</summary>
-              <p>
-                تختلف حسب نوع الشحن والوجهة. الشحن الجوي عادة 3-7 أيام، والبحري
-                15-45 يوماً، والبري يعتمد على المسافة.
+              <summary data-i18n="faq.q1">كم مدة الشحن؟</summary>
+              <p data-i18n="faq.a1">
+                تختلف حسب الوسيلة والوجهة. الجوي عادة من 3 إلى 7 أيام، البحري من
+                15 إلى 45 يوماً، والبري يعتمد على المسافة.
               </p>
             </details>
 
             <details class="faq-item">
-              <summary>هل تقدمون تخليص جمركي؟</summary>
-              <p>
-                نعم، نوفر خدمة تخليص جمركي كاملة حسب متطلبات بلد
-                الاستيراد/التصدير. وفي حالة الشحن لدول أوروبا عن طريق وكالتنا
-                Sky Net لا يتم تحميل العميل مصاريف التخليص الجمركي.
+              <summary data-i18n="faq.q2">كيف أستورد من الصين أو الإمارات؟</summary>
+              <p data-i18n="faq.a2">
+                راسلنا على واتساب فنرسل لك عنوان مستودعنا في الدولة التي ستشتري
+                منها، ونتولى نحن التجميع والشحن والتخليص والتسليم حتى بابك.
               </p>
             </details>
 
             <details class="faq-item">
-              <summary>هل يمكن تتبع الشحنة؟</summary>
-              <p>
-                نعم، يتم تحديث حالة الشحنة ومتابعتها حتى التسليم النهائي من خلال
-                موقعنا عبر رقم البوليصة (Tracking Number).
+              <summary data-i18n="faq.q3">هل تقدمون تخليص جمركي؟</summary>
+              <p data-i18n="faq.a3">
+                نعم، تخليص كامل بمعرفتنا في الصادر والوارد حسب متطلبات بلد
+                الوجهة.
               </p>
             </details>
 
             <details class="faq-item">
-              <summary>ما المستندات المطلوبة؟</summary>
-              <p>
-                تختلف حسب نوع الشحنة والوجهة. سنرسل لك قائمة المستندات المطلوبة
-                بعد استلام التفاصيل.
+              <summary data-i18n="faq.q4">
+                كم ستكون الرسوم الجمركية على شحنتي الواردة؟
+              </summary>
+              <p data-i18n="faq.a4">
+                تعتمد على نوع الصنف وقيمته وبلد المنشأ. أرسل لنا فاتورة الشراء أو
+                رابط المنتج قبل الشحن، ونعطيك تقديراً للرسوم.
               </p>
             </details>
 
             <details class="faq-item">
-              <summary>هل يوجد حد أدنى للوزن؟</summary>
-              <p>
-                نقبل شحنات مختلفة من طرود صغيرة وحتى شحنات تجارية كبيرة. أرسل
-                الوزن والأبعاد على واتساب وسنقترح أفضل خيار.
+              <summary data-i18n="faq.q5">هل يمكن تتبع الشحنة؟</summary>
+              <p data-i18n="faq.a5">
+                نعم، عبر رقم البوليصة من قسم التتبع في موقعنا، مع تحديث الحالة
+                حتى التسليم النهائي.
               </p>
             </details>
 
             <details class="faq-item">
-              <summary>كيف يتم حساب تكلفة الشحن؟</summary>
-              <p>
-                يتم احتساب التكلفة بناءً على: الوزن الفعلي أو الحجمي، نوع الشحن،
-                الوجهة، طبيعة البضاعة، وخدمات إضافية مثل التخليص أو التوصيل.
+              <summary data-i18n="faq.q6">ما المستندات المطلوبة؟</summary>
+              <p data-i18n="faq.a6">
+                تختلف حسب نوع الشحنة والوجهة. نرسل لك القائمة الدقيقة بعد استلام
+                التفاصيل.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.q7">هل يوجد حد أدنى للوزن؟</summary>
+              <p data-i18n="faq.a7">
+                لا. نقبل من الطرد الواحد وحتى الشحنات التجارية الكبيرة.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.q8">كيف تُحسب تكلفة الشحن؟</summary>
+              <p data-i18n="faq.a8">
+                على أساس الوزن الفعلي أو الحجمي أيهما أكبر، ووسيلة الشحن،
+                والوجهة، وطبيعة البضاعة.
               </p>
             </details>
           </div>
@@ -636,26 +841,24 @@
       <div class="section-divider" aria-hidden="true"></div>
 
       <!-- Contact Section -->
-      <section
-        id="contact"
-        class="contact-section"
-        aria-labelledby="contact-title"
-      >
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
         <div class="container">
-          <h2 id="contact-title">تواصل معنا</h2>
-          <p class="contact-subtitle">
+          <h2 id="contact-title" data-i18n="contact.title">تواصل معنا</h2>
+          <p class="contact-subtitle" data-i18n="contact.subtitle">
             يسعدنا الرد على استفساراتكم طوال أيام الأسبوع
           </p>
 
           <form class="contact-form" id="contactForm" novalidate>
             <div class="input-group">
-              <label for="contact-name"
-                >الاسم الكامل <span class="required">*</span></label
-              >
+              <label for="contact-name">
+                <span data-i18n="contact.name">الاسم الكامل</span>
+                <span class="required">*</span>
+              </label>
               <input
                 type="text"
                 id="contact-name"
                 name="name"
+                data-i18n-placeholder="contact.namePlaceholder"
                 placeholder="اكتب اسمك هنا"
                 required
                 aria-required="true"
@@ -663,9 +866,10 @@
             </div>
 
             <div class="input-group">
-              <label for="contact-email"
-                >البريد الإلكتروني <span class="required">*</span></label
-              >
+              <label for="contact-email">
+                <span data-i18n="contact.email">البريد الإلكتروني</span>
+                <span class="required">*</span>
+              </label>
               <input
                 type="email"
                 id="contact-email"
@@ -677,13 +881,15 @@
             </div>
 
             <div class="input-group">
-              <label for="contact-phone"
-                >رقم الهاتف <span class="required">*</span></label
-              >
+              <label for="contact-phone">
+                <span data-i18n="contact.phone">رقم الهاتف</span>
+                <span class="required">*</span>
+              </label>
               <input
                 type="tel"
                 id="contact-phone"
                 name="phone"
+                data-i18n-placeholder="quote.phonePlaceholder"
                 placeholder="01234567890"
                 required
                 aria-required="true"
@@ -691,22 +897,28 @@
             </div>
 
             <div class="input-group">
-              <label for="contact-message"
-                >رسالتك <span class="required">*</span></label
-              >
+              <label for="contact-message">
+                <span data-i18n="contact.message">رسالتك</span>
+                <span class="required">*</span>
+              </label>
               <textarea
                 id="contact-message"
                 name="message"
+                data-i18n-placeholder="contact.messagePlaceholder"
                 placeholder="اكتب رسالتك هنا..."
                 required
                 aria-required="true"
               ></textarea>
             </div>
 
-            <button type="submit" class="send-btn">إرسال الرسالة</button>
+            <button type="submit" class="send-btn" data-i18n="contact.send">
+              إرسال الرسالة
+            </button>
 
             <div class="success-message" id="successMessage" role="alert">
-              <span>شكراً لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.</span>
+              <span data-i18n="contact.success"
+                >شكراً لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.</span
+              >
             </div>
           </form>
         </div>
@@ -715,65 +927,59 @@
       <div class="section-divider" aria-hidden="true"></div>
 
       <!-- Contact Info Boxes -->
-      <section class="contact-info-section" aria-label="معلومات الاتصال">
+      <section
+        class="contact-info-section"
+        data-i18n-aria-label="a11y.contactInfo"
+        aria-label="معلومات الاتصال"
+      >
         <div class="container">
           <div class="contact-info-boxes">
             <a
               href="https://www.google.com/maps/dir//263+%D8%B4+Al+Mehwar+Al+Markazi"
               target="_blank"
+              rel="noopener"
               class="contact-box"
+              data-i18n-aria-label="contact.addressAria"
               aria-label="عنوان الشركة على الخريطة"
             >
               <div class="icon">
-                <img
-                  src="images/Location.png"
-                  alt=""
-                  width="100"
-                  height="100"
-                  loading="lazy"
-                />
+                <img src="images/Location.png" alt="" width="100" height="100" loading="lazy" />
               </div>
-              <h3>عنوان الشركة</h3>
-              <p>263 المحور المركزي ميدان النجدة الحي الثالث أمام بي.تك</p>
-              <p>6 أكتوبر، الجيزة، مصر</p>
+              <h3 data-i18n="contact.addressTitle">عنوان الشركة</h3>
+              <p data-i18n="contact.addressLine1">
+                263 المحور المركزي، ميدان النجدة، الحي الثالث، أمام بي.تك
+              </p>
+              <p data-i18n="contact.addressLine2">6 أكتوبر، الجيزة، مصر</p>
             </a>
 
             <a
               href="tel:+201550564589"
               class="contact-box"
+              data-i18n-aria-label="contact.phoneAria"
               aria-label="اتصل بنا"
             >
               <div class="icon">
-                <img
-                  src="images/Phone.png"
-                  alt=""
-                  width="100"
-                  height="100"
-                  loading="lazy"
-                />
+                <img src="images/Phone.png" alt="" width="100" height="100" loading="lazy" />
               </div>
-              <h3>رقم الهاتف</h3>
+              <h3 data-i18n="contact.phoneTitle">رقم الهاتف</h3>
               <p dir="ltr">+20 155 056 4589</p>
             </a>
 
             <a
-              href="https://wa.me/201550564589?text=مرحبا، أريد الاستفسار عن خدمات الشحن"
+              href="https://wa.me/201550564589"
+              data-wa-base="https://wa.me/201550564589"
+              data-wa-message="msg.waGreeting"
               target="_blank"
               rel="noopener"
               class="contact-box"
+              data-i18n-aria-label="contact.whatsappAria"
               aria-label="تواصل عبر واتساب"
             >
               <div class="icon">
-                <img
-                  src="images/WhatsApp.png"
-                  alt=""
-                  width="100"
-                  height="100"
-                  loading="lazy"
-                />
+                <img src="images/WhatsApp.png" alt="" width="100" height="100" loading="lazy" />
               </div>
-              <h3>WhatsApp</h3>
-              <p>تواصل معنا مباشرة</p>
+              <h3 data-i18n="contact.whatsappTitle">WhatsApp</h3>
+              <p data-i18n="contact.whatsappDesc">تواصل معنا مباشرة</p>
             </a>
 
             <a
@@ -781,19 +987,14 @@
               target="_blank"
               rel="noopener"
               class="contact-box"
+              data-i18n-aria-label="contact.facebookAria"
               aria-label="تابعنا على فيسبوك"
             >
               <div class="icon">
-                <img
-                  src="images/FaceBook.png"
-                  alt=""
-                  width="100"
-                  height="100"
-                  loading="lazy"
-                />
+                <img src="images/FaceBook.png" alt="" width="100" height="100" loading="lazy" />
               </div>
-              <h3>Facebook</h3>
-              <p>تابعنا على فيسبوك</p>
+              <h3 data-i18n="contact.facebookTitle">Facebook</h3>
+              <p data-i18n="contact.facebookDesc">تابعنا على فيسبوك</p>
             </a>
           </div>
         </div>
@@ -802,7 +1003,11 @@
       <div class="section-divider" aria-hidden="true"></div>
 
       <!-- Google Map -->
-      <section class="map-section" aria-label="موقعنا على الخريطة">
+      <section
+        class="map-section"
+        data-i18n-aria-label="a11y.mapSection"
+        aria-label="موقعنا على الخريطة"
+      >
         <div class="map-container">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d216.03816351404862!2d30.93074374545061!3d29.96187691827189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14585665fdae20c5%3A0x31096ce8f60cfdec!2s263%20%D8%B4%20Al%20Mehwar%20Al%20Markazi%2C%20First%206th%20of%20October%2C%20Giza%20Governorate%203232110!5e0!3m2!1sen!2seg!4v1764763177101!5m2!1sen!2seg"
@@ -811,6 +1016,7 @@
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
+            data-i18n-title="a11y.mapTitle"
             title="موقع Message Express على خرائط جوجل"
           >
           </iframe>
@@ -822,11 +1028,11 @@
     <footer role="contentinfo">
       <div class="container">
         <p>
-          &copy; <span id="currentYear">2025</span> Message Express - جميع
-          الحقوق محفوظة
+          &copy; <span id="currentYear">2026</span> Message Express —
+          <span data-i18n="footer.rights">جميع الحقوق محفوظة</span>
         </p>
-        <p style="margin-top: 10px; font-size: 0.9rem">
-          رخصة بريد رقم 64 | شحن دولي موثوق
+        <p style="margin-top: 10px; font-size: 0.9rem" data-i18n="footer.license">
+          رخصة بريد رقم 64 | شحن دولي صادر ووارد
         </p>
       </div>
     </footer>
@@ -835,19 +1041,21 @@
     <button
       id="scrollTopBtn"
       class="scroll-top-btn"
+      data-i18n-aria-label="a11y.scrollTop"
       aria-label="العودة إلى الأعلى"
+      data-i18n-title="a11y.scrollTop"
       title="العودة إلى الأعلى"
     >
       ▲
     </button>
 
-    <!-- Structured Data (Schema.org) for SEO -->
+    <!-- Structured Data (Schema.org) — Arabic is canonical for SEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Message Express",
-        "description": "شركة Message Express للشحن الدولي - شحن سريع وآمن جوي وبحري وبري لجميع دول العالم",
+        "description": "شركة Message Express للشحن الدولي — شحن صادر جوي وبحري وبري من مصر إلى العالم، واستيراد وارد من الصين والإمارات وأمريكا وأوروبا",
         "url": "https://www.messageexpress.com",
         "logo": "https://www.messageexpress.com/images/logo.png",
         "telephone": "+20-155-056-4589",
@@ -876,11 +1084,8 @@
       {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "شحن دولي",
-        "provider": {
-          "@type": "Organization",
-          "name": "Message Express"
-        },
+        "serviceType": "شحن دولي صادر ووارد",
+        "provider": { "@type": "Organization", "name": "Message Express" },
         "areaServed": "Worldwide",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -890,24 +1095,48 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "الشحن الجوي",
-                "description": "شحن جوي سريع من 3 إلى 7 أيام"
+                "name": "الشحن الجوي (صادر)",
+                "description": "شحن جوي سريع من 3 إلى 7 أيام من مصر إلى جميع دول العالم"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "الشحن البحري",
-                "description": "شحن بحري موثوق بأفضل الأسعار"
+                "name": "الشحن البحري (صادر)",
+                "description": "شحن بحري بحاويات كاملة FCL أو مجمّعة LCL"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "الشحن البري",
+                "name": "الشحن البري (صادر)",
                 "description": "شحن بري للدول العربية والإقليمية"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "الاستيراد من الصين (وارد)",
+                "description": "عنوان استلام في الصين لمشتريات 1688 وTaobao وAlibaba، مع تجميع الطرود والشحن والتخليص الجمركي والتوصيل حتى الباب في مصر"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "الاستيراد من الإمارات (وارد)",
+                "description": "عنوان استلام في دبي لمشتريات نون وأمازون الإمارات والموردين المحليين، مع التجميع والشحن والتخليص والتوصيل في مصر"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "الاستيراد من أمريكا وأوروبا (وارد)",
+                "description": "شحن مشتريات أمازون أمريكا إلى مصر، وشحن من أوروبا عبر وكيلنا Sky Net دون تحميل العميل مصاريف التخليص الجمركي"
               }
             }
           ]
@@ -925,7 +1154,15 @@
             "name": "كم مدة الشحن؟",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "تختلف حسب نوع الشحن والوجهة. الشحن الجوي عادة 3-7 أيام، والبحري 15-45 يوماً، والبري يعتمد على المسافة."
+              "text": "تختلف حسب الوسيلة والوجهة. الجوي عادة من 3 إلى 7 أيام، البحري من 15 إلى 45 يوماً، والبري يعتمد على المسافة. في الوارد تُضاف مدة التجميع والتخليص."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كيف أستورد من الصين أو الإمارات؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "راسلنا على واتساب فنرسل لك عنوان مستودعنا في الدولة التي ستشتري منها. اجعل هذا العنوان هو عنوان التسليم عند الشراء، ونتولى نحن التجميع والشحن والتخليص والتسليم حتى بابك."
             }
           },
           {
@@ -933,7 +1170,15 @@
             "name": "هل تقدمون تخليص جمركي؟",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "نعم، نوفر خدمة تخليص جمركي كاملة. في حالة الشحن لدول أوروبا عن طريق وكالتنا Sky Net لا يتم تحميل العميل مصاريف التخليص الجمركي."
+              "text": "نعم، تخليص كامل بمعرفتنا في الصادر والوارد حسب متطلبات بلد الوجهة. وفي الشحن إلى أوروبا عبر وكيلنا Sky Net لا يتحمل العميل مصاريف التخليص."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كم ستكون الرسوم الجمركية على شحنتي الواردة؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "تعتمد على نوع الصنف وقيمته وبلد المنشأ. أرسل لنا فاتورة الشراء أو رابط المنتج قبل الشحن، ونعطيك تقديراً للرسوم حتى تقرر على أساس واضح."
             }
           },
           {
@@ -941,7 +1186,7 @@
             "name": "هل يمكن تتبع الشحنة؟",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "نعم، يتم تحديث حالة الشحنة ومتابعتها حتى التسليم النهائي من خلال موقعنا عبر رقم البوليصة."
+              "text": "نعم، عبر رقم البوليصة من قسم التتبع في موقعنا، مع تحديث الحالة حتى التسليم النهائي."
             }
           },
           {
@@ -949,7 +1194,7 @@
             "name": "ما المستندات المطلوبة؟",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "تختلف حسب نوع الشحنة والوجهة. سنرسل لك قائمة المستندات المطلوبة بعد استلام التفاصيل."
+              "text": "تختلف حسب نوع الشحنة والوجهة. للوارد التجاري غالباً فاتورة الشراء وبيان المحتويات. نرسل لك القائمة الدقيقة بعد استلام التفاصيل."
             }
           },
           {
@@ -957,22 +1202,23 @@
             "name": "هل يوجد حد أدنى للوزن؟",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "نقبل شحنات مختلفة من طرود صغيرة وحتى شحنات تجارية كبيرة."
+              "text": "لا. نقبل من الطرد الواحد وحتى الشحنات التجارية الكبيرة."
             }
           },
           {
             "@type": "Question",
-            "name": "كيف يتم حساب تكلفة الشحن؟",
+            "name": "كيف تُحسب تكلفة الشحن؟",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "يتم احتساب التكلفة بناءً على الوزن الفعلي أو الحجمي، نوع الشحن، الوجهة، طبيعة البضاعة، وخدمات إضافية."
+              "text": "على أساس الوزن الفعلي أو الحجمي أيهما أكبر، ووسيلة الشحن، والوجهة، وطبيعة البضاعة، بالإضافة إلى الخدمات الإضافية مثل التخليص والتوصيل."
             }
           }
         ]
       }
     </script>
 
-    <!-- JavaScript File -->
+    <!-- i18n must load before script.js so t() is available -->
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 
     <!-- Update current year -->

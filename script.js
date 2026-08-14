@@ -150,7 +150,10 @@ function selectCompany(name, logo) {
   const selectedLogo = document.getElementById("selected-logo");
   if (selectedLogo) {
     selectedLogo.src = logo;
-    selectedLogo.alt = `شعار ${name}`;
+    selectedLogo.alt =
+      document.documentElement.lang === "en" ? `${name} logo` : `شعار ${name}`;
+    // Stop i18n from overwriting the chosen carrier's alt text on language switch
+    selectedLogo.removeAttribute("data-i18n-alt");
   }
 
   const optionsList = document.getElementById("options-list");
@@ -173,7 +176,7 @@ function trackShipment() {
   const trackingNumber = trackingNumberInput.value.trim();
 
   if (!trackingNumber) {
-    showNotification("الرجاء إدخال رقم التتبع", "error");
+    showNotification(t("msg.enterTracking"), "error");
     trackingNumberInput.focus();
     return;
   }
@@ -194,7 +197,7 @@ function trackShipment() {
     );
     trackingNumberInput.value = "";
   } else {
-    showNotification("الرجاء اختيار شركة الشحن أولاً", "error");
+    showNotification(t("msg.selectCompany"), "error");
   }
 }
 
@@ -206,6 +209,7 @@ function sendWhatsAppQuote() {
   const formData = {
     name: form.name.value.trim(),
     phone: form.phone.value.trim(),
+    shipDirection: form.shipDirection.value,
     shipType: form.shipType.value,
     weight: form.weight.value.trim(),
     from: form.from.value.trim(),
@@ -217,37 +221,53 @@ function sendWhatsAppQuote() {
   if (
     !formData.name ||
     !formData.phone ||
+    !formData.shipDirection ||
     !formData.shipType ||
     !formData.from ||
     !formData.to
   ) {
-    showNotification("الرجاء ملء جميع الحقول المطلوبة", "error");
+    showNotification(t("msg.fillRequired"), "error");
     return;
   }
 
   // Validate phone number (Egyptian format)
   if (!isValidPhone(formData.phone)) {
-    showNotification("الرجاء إدخال رقم هاتف صحيح", "error");
+    showNotification(t("msg.invalidPhone"), "error");
     return;
   }
 
-  // Build WhatsApp message
-  const message = `مرحبا، أريد عرض سعر للشحن:
+  // Map stored values back to readable labels in the active language
+  const directionLabel = t(
+    formData.shipDirection === "import"
+      ? "quote.directionImport"
+      : "quote.directionExport",
+  );
+  const shipTypeKeys = {
+    air: "quote.shipAir",
+    sea: "quote.shipSea",
+    land: "quote.shipLand",
+    advise: "quote.shipAdvise",
+  };
+  const shipTypeLabel = t(shipTypeKeys[formData.shipType] || "quote.shipAdvise");
 
-📝 الاسم: ${formData.name}
-📞 الهاتف: ${formData.phone}
-✈️ نوع الشحن: ${formData.shipType}
-📦 من: ${formData.from}
-📍 إلى: ${formData.to}
-⚖️ الوزن: ${formData.weight || "غير محدد"}
-📋 الوصف: ${formData.desc || "لا يوجد"}`;
+  // Build WhatsApp message
+  const message = `${t("msg.waQuoteIntro")}
+
+📝 ${t("msg.waName")}: ${formData.name}
+📞 ${t("msg.waPhone")}: ${formData.phone}
+🔁 ${t("msg.waDirection")}: ${directionLabel}
+✈️ ${t("msg.waShipType")}: ${shipTypeLabel}
+📦 ${t("msg.waFrom")}: ${formData.from}
+📍 ${t("msg.waTo")}: ${formData.to}
+⚖️ ${t("msg.waWeight")}: ${formData.weight || t("msg.waNotSet")}
+📋 ${t("msg.waDesc")}: ${formData.desc || t("msg.waNone")}`;
 
   const waURL = `https://wa.me/${CONFIG.WA_NUMBER}?text=${encodeURIComponent(message)}`;
   window.open(waURL, "_blank", "noopener,noreferrer");
 
   // Reset form
   form.reset();
-  showNotification("سيتم فتح واتساب الآن. شكراً لثقتك!", "success");
+  showNotification(t("msg.waOpening"), "success");
 }
 
 // ==================== Contact Form Handler ====================
@@ -272,12 +292,12 @@ function initContactForm() {
       !formData.phone ||
       !formData.message
     ) {
-      showNotification("الرجاء ملء جميع الحقول", "error");
+      showNotification(t("msg.fillAll"), "error");
       return;
     }
 
     if (!isValidEmail(formData.email)) {
-      showNotification("الرجاء إدخال بريد إلكتروني صحيح", "error");
+      showNotification(t("msg.invalidEmail"), "error");
       return;
     }
 
@@ -305,7 +325,7 @@ function initFormValidation() {
     input.addEventListener("blur", function () {
       if (this.value && !isValidEmail(this.value)) {
         this.style.borderColor = "#d32f2f";
-        showNotification("الرجاء إدخال بريد إلكتروني صحيح", "error");
+        showNotification(t("msg.invalidEmail"), "error");
       } else {
         this.style.borderColor = "";
       }
@@ -317,7 +337,7 @@ function initFormValidation() {
     input.addEventListener("blur", function () {
       if (this.value && !isValidPhone(this.value)) {
         this.style.borderColor = "#d32f2f";
-        showNotification("الرجاء إدخال رقم هاتف صحيح", "error");
+        showNotification(t("msg.invalidPhone"), "error");
       } else {
         this.style.borderColor = "";
       }
