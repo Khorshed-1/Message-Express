@@ -247,6 +247,14 @@ const I18N = {
     "contact.facebookDesc": "تابعنا على فيسبوك",
     "contact.facebookAria": "تابعنا على فيسبوك",
 
+    /* ---------- Modal ---------- */
+    "modal.closeAria": "إغلاق",
+    "modal.soon.title": "صفحتنا على فيسبوك قيد التجهيز",
+    "modal.soon.desc":
+      "بنجهّزها بشكل يليق بيكم، وهتكون جاهزة قريب إن شاء الله. لحد ما تخلص، إحنا معاك على واتساب في أي وقت.",
+    "modal.soon.whatsapp": "تواصل معنا على واتساب",
+    "modal.soon.close": "تمام، شكراً",
+
     /* ---------- Footer ---------- */
     "footer.rights": "جميع الحقوق محفوظة",
     "footer.license": "رخصة بريد رقم 64 | شحن دولي صادر ووارد",
@@ -519,6 +527,14 @@ const I18N = {
     "contact.facebookTitle": "Facebook",
     "contact.facebookDesc": "Follow us on Facebook",
     "contact.facebookAria": "Follow us on Facebook",
+
+    /* ---------- Modal ---------- */
+    "modal.closeAria": "Close",
+    "modal.soon.title": "Our Facebook page is on the way",
+    "modal.soon.desc":
+      "We're putting it together properly and it'll be live soon. In the meantime, we're on WhatsApp whenever you need us.",
+    "modal.soon.whatsapp": "Message us on WhatsApp",
+    "modal.soon.close": "Got it, thanks",
 
     /* ---------- Footer ---------- */
     "footer.rights": "All rights reserved",

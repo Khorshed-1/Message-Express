@@ -1507,11 +1507,6 @@ footer {
 }
 
 /* ---------- Language toggle ---------- */
-.nav-lang {
-  display: flex;
-  align-items: center;
-}
-
 .lang-toggle {
   font-family: inherit;
   font-size: 0.95rem;
@@ -1536,12 +1531,6 @@ footer {
 .lang-toggle:focus-visible {
   outline: 3px solid var(--secondary-color);
   outline-offset: 2px;
-}
-
-/* ---------- Nav highlight for the new Import entry ---------- */
-.nav-highlight {
-  color: var(--secondary-color) !important;
-  font-weight: 800;
 }
 
 /* ---------- Direction blocks (Export / Import headers) ---------- */
@@ -1894,13 +1883,199 @@ footer {
     width: fit-content;
   }
 
-  .nav-lang {
-    justify-content: center;
-    margin-top: 8px;
-  }
-
   .lang-toggle {
     width: 100%;
     max-width: 200px;
+  }
+}
+
+/* ==========================================================================
+   ADDED: fixed language toggle placement, modal, button-as-contact-box
+   ========================================================================== */
+
+/* ---------- Language toggle: pinned to the far edge, never shifts ---------- */
+header .logo {
+  order: 1;
+  flex-shrink: 0;
+}
+
+header nav {
+  order: 2;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+header .lang-toggle {
+  order: 3;
+  flex-shrink: 0;
+  min-width: 104px;
+  text-align: center;
+}
+
+/* ---------- Contact box rendered as a <button> (Facebook) ---------- */
+button.contact-box {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+
+/* ---------- Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 10050;
+  animation: modalFade 0.25s ease;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-box {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  max-width: 480px;
+  width: 100%;
+  padding: 45px 35px 35px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  animation: modalPop 0.3s ease;
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  inset-inline-end: 16px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  outline: none;
+}
+
+.modal-icon {
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.modal-box h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 14px;
+}
+
+.modal-box p {
+  color: var(--text-light);
+  line-height: 1.9;
+  font-size: 1.02rem;
+  margin-bottom: 28px;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.modal-btn {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 40px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.modal-btn-primary {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
+.modal-btn-primary:hover,
+.modal-btn-primary:focus {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  outline: none;
+}
+
+.modal-btn-ghost {
+  background: transparent;
+  color: var(--text-light);
+  border-color: #ddd;
+}
+
+.modal-btn-ghost:hover,
+.modal-btn-ghost:focus {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  /* Toggle sits between the logo and the hamburger, always in the same spot */
+  header .lang-toggle {
+    order: 2;
+    min-width: 88px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    margin-inline-start: auto;
+    margin-inline-end: 12px;
+  }
+
+  header nav {
+    order: 4;
+  }
+
+  .modal-box {
+    padding: 40px 22px 28px;
+  }
+
+  .modal-btn {
+    width: 100%;
   }
 }

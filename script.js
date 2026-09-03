@@ -23,8 +23,45 @@ document.addEventListener("DOMContentLoaded", function () {
   initMobileMenu();
   initHeaderScroll();
   initFormValidation();
+  initSoonModal();
   logWelcome();
 });
+
+// ==================== "Coming soon" Modal ====================
+function initSoonModal() {
+  const modal = document.getElementById("soonModal");
+  const opener = document.getElementById("facebookBox");
+  if (!modal || !opener) return;
+
+  let lastFocused = null;
+
+  const open = () => {
+    lastFocused = document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    modal.querySelector(".modal-close")?.focus();
+  };
+
+  const close = () => {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+    lastFocused?.focus();
+  };
+
+  opener.addEventListener("click", open);
+  document.getElementById("soonModalClose")?.addEventListener("click", close);
+  document.getElementById("soonModalDismiss")?.addEventListener("click", close);
+
+  // Click the backdrop to dismiss
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) close();
+  });
+
+  // Escape to dismiss
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.hidden) close();
+  });
+}
 
 // ==================== Hero Slider ====================
 function initSlider() {

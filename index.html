@@ -66,6 +66,15 @@
           height="60"
         />
       </div>
+      <button
+        id="langToggle"
+        class="lang-toggle"
+        type="button"
+        data-i18n-aria-label="lang.toggleAria"
+        aria-label="Switch to English"
+      >
+        English
+      </button>
       <nav role="navigation" data-i18n-aria-label="a11y.mainNav" aria-label="القائمة الرئيسية">
         <button
           class="mobile-menu-toggle"
@@ -80,27 +89,12 @@
         <ul class="nav-menu">
           <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
           <li><a href="#services" data-i18n="nav.services">خدماتنا</a></li>
-          <li>
-            <a href="#import" class="nav-highlight" data-i18n="nav.import"
-              >الوارد</a
-            >
-          </li>
+          <li><a href="#import" data-i18n="nav.import">الوارد</a></li>
           <li><a href="#why-us" data-i18n="nav.whyUs">لماذا نحن</a></li>
           <li><a href="#clients" data-i18n="nav.clients">شركاؤنا</a></li>
           <li><a href="#tracking" data-i18n="nav.tracking">تتبع الشحنة</a></li>
           <li><a href="#quote" data-i18n="nav.quote">عرض سعر</a></li>
           <li><a href="#contact" data-i18n="nav.contact">تواصل معنا</a></li>
-          <li class="nav-lang">
-            <button
-              id="langToggle"
-              class="lang-toggle"
-              type="button"
-              data-i18n-aria-label="lang.toggleAria"
-              aria-label="Switch to English"
-            >
-              English
-            </button>
-          </li>
         </ul>
       </nav>
     </header>
@@ -982,11 +976,10 @@
               <p data-i18n="contact.whatsappDesc">تواصل معنا مباشرة</p>
             </a>
 
-            <a
-              href="https://www.facebook.com/messageexpress"
-              target="_blank"
-              rel="noopener"
+            <button
+              type="button"
               class="contact-box"
+              id="facebookBox"
               data-i18n-aria-label="contact.facebookAria"
               aria-label="تابعنا على فيسبوك"
             >
@@ -995,7 +988,7 @@
               </div>
               <h3 data-i18n="contact.facebookTitle">Facebook</h3>
               <p data-i18n="contact.facebookDesc">تابعنا على فيسبوك</p>
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -1037,6 +1030,56 @@
       </div>
     </footer>
 
+    <!-- Soon Modal (Facebook page under construction) -->
+    <div
+      class="modal-overlay"
+      id="soonModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="soonModalTitle"
+      hidden
+    >
+      <div class="modal-box" role="document">
+        <button
+          type="button"
+          class="modal-close"
+          id="soonModalClose"
+          data-i18n-aria-label="modal.closeAria"
+          aria-label="إغلاق"
+        >
+          &times;
+        </button>
+        <div class="modal-icon" aria-hidden="true">🚧</div>
+        <h3 id="soonModalTitle" data-i18n="modal.soon.title">
+          صفحتنا على فيسبوك قيد التجهيز
+        </h3>
+        <p data-i18n="modal.soon.desc">
+          بنجهّزها بشكل يليق بيكم، وهتكون جاهزة قريب إن شاء الله. لحد ما تخلص،
+          إحنا معاك على واتساب في أي وقت.
+        </p>
+        <div class="modal-actions">
+          <a
+            href="https://wa.me/201550564589"
+            data-wa-base="https://wa.me/201550564589"
+            data-wa-message="msg.waGreeting"
+            target="_blank"
+            rel="noopener"
+            class="modal-btn modal-btn-primary"
+            data-i18n="modal.soon.whatsapp"
+            >تواصل معنا على واتساب</a
+          >
+          <button
+            type="button"
+            class="modal-btn modal-btn-ghost"
+            id="soonModalDismiss"
+            data-i18n="modal.soon.close"
+          >
+            تمام، شكراً
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Scroll to Top Button -->
     <button
       id="scrollTopBtn"
@@ -1067,10 +1110,7 @@
           "addressRegion": "الجيزة",
           "addressCountry": "EG"
         },
-        "sameAs": [
-          "https://www.facebook.com/messageexpress",
-          "https://wa.me/201550564589"
-        ],
+        "sameAs": ["https://wa.me/201550564589"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+20-155-056-4589",
