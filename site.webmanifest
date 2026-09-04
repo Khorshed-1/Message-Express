@@ -1,0 +1,15 @@
+{
+  "name": "Message Express",
+  "short_name": "Message Express",
+  "description": "شحن دولي صادر ووارد — رخصة بريد رقم 64",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#171d8b",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "lang": "ar",
+  "dir": "rtl"
+}

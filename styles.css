@@ -1901,9 +1901,15 @@ header .logo {
 
 header nav {
   order: 2;
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: center;
+}
+
+/* Centre the menu only on desktop — on mobile nav is a fixed dropdown */
+@media (min-width: 769px) {
+  header nav {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 header .lang-toggle {
@@ -2057,14 +2063,15 @@ button.contact-box {
 }
 
 @media (max-width: 768px) {
-  /* Toggle sits between the logo and the hamburger, always in the same spot */
+  /* Toggle hugs the logo; the hamburger stays pinned to the opposite edge,
+     so the two never sit next to each other or read as one control. */
   header .lang-toggle {
     order: 2;
-    min-width: 88px;
-    padding: 6px 14px;
-    font-size: 0.85rem;
-    margin-inline-start: auto;
-    margin-inline-end: 12px;
+    min-width: 76px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    margin-inline-start: 18px;
+    margin-inline-end: auto;
   }
 
   header nav {
