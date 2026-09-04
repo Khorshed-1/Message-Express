@@ -632,8 +632,9 @@ function applyLanguage(lang) {
     });
   });
 
-  // Document title
-  document.title = t("meta.title");
+  // Document title — each page declares its own key via
+  // <html data-title-key="...">; the home page falls back to meta.title.
+  document.title = t(html.getAttribute("data-title-key") || "meta.title");
 
   // WhatsApp deep links that carry a prefilled message
   document.querySelectorAll("[data-wa-message]").forEach((el) => {
