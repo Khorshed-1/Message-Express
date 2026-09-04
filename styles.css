@@ -1884,8 +1884,8 @@ footer {
   }
 
   .lang-toggle {
-    width: 100%;
-    max-width: 200px;
+    width: auto;
+    flex: 0 0 auto;
   }
 }
 
@@ -2065,13 +2065,18 @@ button.contact-box {
 @media (max-width: 768px) {
   /* Toggle hugs the logo; the hamburger stays pinned to the opposite edge,
      so the two never sit next to each other or read as one control. */
+  /* Physical margins on purpose: the header's visual order is logo → toggle →
+     hamburger in BOTH rtl (row-reverse) and ltr (row), so logical margins
+     would flip and shove the toggle into the hamburger. */
   header .lang-toggle {
     order: 2;
     min-width: 76px;
     padding: 5px 12px;
     font-size: 0.8rem;
-    margin-inline-start: 18px;
-    margin-inline-end: auto;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-left: 14px;
+    margin-right: auto;
   }
 
   header nav {
