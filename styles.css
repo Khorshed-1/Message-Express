@@ -2065,10 +2065,34 @@ button.contact-box {
 @media (max-width: 768px) {
   /* Toggle hugs the logo; the hamburger stays pinned to the opposite edge,
      so the two never sit next to each other or read as one control. */
+  /* On mobile <nav> is a full-width fixed overlay sitting on top of the header,
+     so it swallowed clicks aimed at the language button. Let clicks fall
+     through the nav box itself, but keep its real children clickable. */
+  header nav {
+    pointer-events: none;
+  }
+
+  header nav > * {
+    pointer-events: auto;
+  }
+
+  /* Pin the hamburger physically. It lives inside the fixed <nav>, which is a
+     block box, so without this it jumps to whichever side is the inline start —
+     landing on top of the logo when the site switches to LTR. */
+  .mobile-menu-toggle {
+    position: fixed;
+    top: 21px;
+    right: 16px;
+    left: auto;
+    z-index: 10001;
+  }
+
   /* Physical margins on purpose: the header's visual order is logo → toggle →
      hamburger in BOTH rtl (row-reverse) and ltr (row), so logical margins
      would flip and shove the toggle into the hamburger. */
   header .lang-toggle {
+    position: relative;
+    z-index: 10002;
     order: 2;
     min-width: 76px;
     padding: 5px 12px;
@@ -2089,5 +2113,22 @@ button.contact-box {
 
   .modal-btn {
     width: 100%;
+  }
+}
+
+/* ==========================================================================
+   ADDED: mobile dropdown must open BELOW the fixed header, not under it.
+   An earlier rule left nav at top:20px, so the first menu item sat behind
+   the language button. Keep this block last.
+   ========================================================================== */
+@media (max-width: 768px) {
+  header nav {
+    top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav {
+    top: 65px;
   }
 }
