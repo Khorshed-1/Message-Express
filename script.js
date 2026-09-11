@@ -480,12 +480,17 @@ function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
-      if (href === "#" || !href) return;
 
-      e.preventDefault();
+      // Re-check at click time, not just at bind time. An anchor can start as
+      // href="#" (so it matches the selector here) and later be pointed at a
+      // real URL — e.g. the tracking modal's button. Without this guard we
+      // would preventDefault() an external link and silently kill it.
+      if (!href || href === "#" || !href.startsWith("#")) return;
 
       const targetSection = document.querySelector(href);
       if (!targetSection) return;
+
+      e.preventDefault();
 
       const header = document.querySelector("header");
       const headerHeight = header?.offsetHeight || 0;
