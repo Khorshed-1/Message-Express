@@ -1939,6 +1939,9 @@ button.contact-box {
   padding: 20px;
   z-index: 10050;
   animation: modalFade 0.25s ease;
+  /* Short viewports: let the overlay scroll so the action buttons are
+     always reachable instead of being cut off below the fold. */
+  overflow-y: auto;
 }
 
 .modal-overlay[hidden] {
@@ -1964,6 +1967,40 @@ button.contact-box {
   text-align: center;
   box-shadow: var(--shadow-lg);
   animation: modalPop 0.3s ease;
+  margin: auto;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+/* Compact the tracking modal on short screens (laptops, landscape phones) */
+@media (max-height: 760px) {
+  .modal-box {
+    padding: 34px 26px 26px;
+  }
+
+  .track-logo {
+    max-width: 92px;
+    margin-bottom: 10px;
+  }
+
+  .modal-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  .track-summary {
+    margin: 14px 0 12px;
+    padding: 12px 16px;
+  }
+
+  .track-note {
+    margin-bottom: 16px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .modal-btn {
+    padding: 11px 24px;
+  }
 }
 
 @keyframes modalPop {
