@@ -247,6 +247,17 @@ const I18N = {
     "contact.facebookDesc": "تابعنا على فيسبوك",
     "contact.facebookAria": "تابعنا على فيسبوك",
 
+    /* ---------- Tracking modal ---------- */
+    "track.modal.title": "شحنتك جاهزة للعرض",
+    "track.modal.carrier": "شركة الشحن",
+    "track.modal.number": "رقم التتبع",
+    "track.modal.go": "عرض تفاصيل الشحنة",
+    "track.modal.cancel": "إلغاء",
+    "track.modal.copy": "نسخ الرقم",
+    "track.modal.copied": "تم النسخ ✓",
+    "track.modal.note":
+      "تُعرض حالة الشحنة على الموقع الرسمي لشركة الشحن، لضمان أن البيانات لحظية ودقيقة.",
+
     /* ---------- Modal ---------- */
     "modal.closeAria": "إغلاق",
     "modal.soon.title": "صفحتنا على فيسبوك قيد التجهيز",
@@ -527,6 +538,17 @@ const I18N = {
     "contact.facebookTitle": "Facebook",
     "contact.facebookDesc": "Follow us on Facebook",
     "contact.facebookAria": "Follow us on Facebook",
+
+    /* ---------- Tracking modal ---------- */
+    "track.modal.title": "Your shipment is ready to view",
+    "track.modal.carrier": "Carrier",
+    "track.modal.number": "Tracking number",
+    "track.modal.go": "View Shipment Details",
+    "track.modal.cancel": "Cancel",
+    "track.modal.copy": "Copy number",
+    "track.modal.copied": "Copied ✓",
+    "track.modal.note":
+      "Shipment status opens on the carrier's own site, so the information you see is live and accurate.",
 
     /* ---------- Modal ---------- */
     "modal.closeAria": "Close",

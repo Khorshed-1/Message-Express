@@ -10,6 +10,8 @@ const CONFIG = {
 const state = {
   slideIndex: 0,
   selectedCompany: "",
+  selectedLogo: "",
+  trackModalLastFocus: null,
   lastScrollY: window.scrollY,
 };
 
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initHeaderScroll();
   initFormValidation();
   initSoonModal();
+  initTrackModal();
   logWelcome();
 });
 
@@ -183,6 +186,7 @@ function toggleOptions() {
 
 function selectCompany(name, logo) {
   state.selectedCompany = name;
+  state.selectedLogo = logo;
 
   const selectedLogo = document.getElementById("selected-logo");
   if (selectedLogo) {
@@ -227,15 +231,104 @@ function trackShipment() {
   };
 
   if (trackingUrls[state.selectedCompany]) {
-    window.open(
+    openTrackModal(
+      state.selectedCompany,
+      state.selectedLogo,
+      trackingNumber,
       trackingUrls[state.selectedCompany],
-      "_blank",
-      "noopener,noreferrer",
     );
-    trackingNumberInput.value = "";
   } else {
     showNotification(t("msg.selectCompany"), "error");
   }
+}
+
+// ==================== Tracking Confirmation Modal ====================
+function openTrackModal(carrier, logo, number, url) {
+  const modal = document.getElementById("trackModal");
+  if (!modal) {
+    // Fallback for any page without the modal markup
+    window.open(url, "_blank", "noopener,noreferrer");
+    return;
+  }
+
+  const logoEl = document.getElementById("trackModalLogo");
+  if (logoEl && logo) {
+    logoEl.src = logo;
+    logoEl.alt = carrier;
+  }
+  document.getElementById("trackModalCarrier").textContent = carrier;
+  document.getElementById("trackModalNumber").textContent = number;
+
+  const go = document.getElementById("trackModalGo");
+  go.setAttribute("href", url);
+
+  // Reset the copy button label each time the modal opens
+  const copyBtn = document.getElementById("trackModalCopy");
+  if (copyBtn) copyBtn.textContent = t("track.modal.copy");
+
+  state.trackModalLastFocus = document.activeElement;
+  modal.hidden = false;
+  document.body.style.overflow = "hidden";
+  go.focus();
+}
+
+function closeTrackModal() {
+  const modal = document.getElementById("trackModal");
+  if (!modal || modal.hidden) return;
+  modal.hidden = true;
+  document.body.style.overflow = "";
+  state.trackModalLastFocus?.focus();
+}
+
+function initTrackModal() {
+  const modal = document.getElementById("trackModal");
+  if (!modal) return;
+
+  document
+    .getElementById("trackModalClose")
+    ?.addEventListener("click", closeTrackModal);
+  document
+    .getElementById("trackModalCancel")
+    ?.addEventListener("click", closeTrackModal);
+
+  // Close once the user has gone through to the carrier
+  document.getElementById("trackModalGo")?.addEventListener("click", () => {
+    setTimeout(closeTrackModal, 150);
+  });
+
+  // Copy the tracking number
+  const copyBtn = document.getElementById("trackModalCopy");
+  copyBtn?.addEventListener("click", async () => {
+    const number = document.getElementById("trackModalNumber").textContent;
+    try {
+      await navigator.clipboard.writeText(number);
+    } catch (e) {
+      // Clipboard API blocked (insecure context or permissions) — fall back
+      const tmp = document.createElement("textarea");
+      tmp.value = number;
+      tmp.setAttribute("readonly", "");
+      tmp.style.position = "absolute";
+      tmp.style.left = "-9999px";
+      document.body.appendChild(tmp);
+      tmp.select();
+      try {
+        document.execCommand("copy");
+      } catch (err) {
+        /* nothing more we can do */
+      }
+      document.body.removeChild(tmp);
+    }
+    copyBtn.textContent = t("track.modal.copied");
+    setTimeout(() => (copyBtn.textContent = t("track.modal.copy")), 2000);
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeTrackModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeTrackModal();
+  });
 }
 
 // ==================== WhatsApp Quote Form ====================

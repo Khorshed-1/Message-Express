@@ -2134,6 +2134,88 @@ button.contact-box {
 }
 
 /* ==========================================================================
+   ADDED: tracking confirmation modal (reuses .modal-overlay / .modal-box)
+   ========================================================================== */
+.track-logo {
+  max-width: 130px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 18px;
+  display: block;
+}
+
+.track-summary {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 22px 0 18px;
+  text-align: start;
+}
+
+.track-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 0;
+}
+
+.track-row + .track-row {
+  border-top: 1px solid #e6e6e6;
+}
+
+.track-label {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.track-value {
+  color: var(--text-dark);
+  font-weight: 800;
+  font-size: 1.02rem;
+  text-align: end;
+  word-break: break-all;
+}
+
+.track-number {
+  font-family: "Segoe UI", Tahoma, monospace;
+  letter-spacing: 0.6px;
+  color: var(--primary-color);
+}
+
+.track-copy {
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 9px 14px;
+  border: 1px dashed #c7c7c7;
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.track-copy:hover,
+.track-copy:focus {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  outline: none;
+}
+
+.track-note {
+  font-size: 0.9rem !important;
+  color: var(--text-light) !important;
+  line-height: 1.8 !important;
+  margin-bottom: 24px !important;
+}
+
+/* ==========================================================================
    ADDED: import landing pages (/import-from-china, /import-from-uae,
    /amazon-shipping). Reuses the existing card, step, FAQ and CTA styles —
    these are only the few pieces those pages add.
